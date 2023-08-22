@@ -21,7 +21,7 @@ st.write(f"""
 ### 過去 **{days}日間** のGAFAの株価
 """)
 
-@st.cache_data
+@st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
